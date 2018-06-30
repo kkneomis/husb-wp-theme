@@ -27,25 +27,3 @@
         </div><!---page section---->
     <?php get_footer(); ?>
                         
-<script>
-$('#myAffix').affix({
-  offset: {
-    top: function () {
-      return (this.top = $('.bs-header').outerHeight(true)) + 20
-    },
-    bottom: function () {
-      return (this.bottom = $('.footer-section').outerHeight(true)) + 200
-    }
-  }
-})
-
-</script>
-
-<style >
-
-    .affix{
-        width: 300px;
-        top: 50px;
-        z-index: 9999 !important;
-    }
-</style>

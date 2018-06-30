@@ -32,13 +32,37 @@ function team_post_type() {
 		'public' => true,
 		'has_archive' => false,
 		'menu_icon' => 'dashicons-groups',
-		'rewrite' => false,
+		'rewrite'  => array( 'slug' => 'faculty/?team='),
 		'supports' => array('title', 'editor', 'thumbnail')
 	) );
 }
 
 add_action( 'init', 'team_post_type', 0 );
 
+
+
+/**
+ * Conditionally Override Yoast SEO Breadcrumb Trail
+ * http://plugins.svn.wordpress.org/wordpress-seo/trunk/frontend/class-breadcrumbs.php
+ * -----------------------------------------------------------------------------------
+ */
+
+add_filter( 'wpseo_breadcrumb_links', 'wpse_100012_override_yoast_breadcrumb_trail' );
+
+function wpse_100012_override_yoast_breadcrumb_trail( $links ) {
+    global $post;
+
+    if ( is_home() || is_singular( 'team' ) || is_archive() ) {
+        $breadcrumb[] = array(
+            'url' => get_permalink( get_page_by_title( 'Faculty' )),
+            'text' => ' Faculty',
+        );
+
+        array_splice( $links, 1, -2, $breadcrumb );
+    }
+
+    return $links;
+}
 /**
  * Register `department` taxonomy
  */
@@ -86,6 +110,7 @@ add_action( 'init', 'team_taxonomy', 0 );
 		'about_us_sub'  => __( 'About Us Page Menu', 'husb' ),
 		'undergrad_main'  => __( 'Undergraduate Main Menu', 'husb' ),
 		'graduate_main'  => __( 'Graduate Main Menu', 'husb' ),
+        'graduate_menu'  => __( 'Graduate Menu', 'husb' ),
 		'student_affairs_main'  => __( 'Student Affair Main Menu', 'husb' ),
         'student_affairs_side'  => __( 'Student Affair Side Menu', 'husb' ),
 		'inside_main'  => __( 'Inside HUSB Main Menu', 'husb' ),
@@ -101,6 +126,71 @@ function tn_custom_excerpt_length( $length ) {
 return 25;
 }
 add_filter( 'excerpt_length', 'tn_custom_excerpt_length', 999 );
+
+//Upcoming events
+function uep_custom_post_type() {
+    $labels = array(
+        'name'                  =>   __( 'Events', 'uep' ),
+        'singular_name'         =>   __( 'Event', 'uep' ),
+        'add_new_item'          =>   __( 'Add New Event', 'uep' ),
+        'all_items'             =>   __( 'All Events', 'uep' ),
+        'edit_item'             =>   __( 'Edit Event', 'uep' ),
+        'new_item'              =>   __( 'New Event', 'uep' ),
+        'view_item'             =>   __( 'View Event', 'uep' ),
+        'not_found'             =>   __( 'No Events Found', 'uep' ),
+        'not_found_in_trash'    =>   __( 'No Events Found in Trash', 'uep' )
+    );
+ 
+    $supports = array(
+        'title',
+        'editor',
+        'excerpt'
+    );
+ 
+    $args = array(
+        'label'         =>   __( 'Events', 'uep' ),
+        'labels'        =>   $labels,
+        'description'   =>   __( 'A list of upcoming events', 'uep' ),
+        'public'        =>   true,
+        'show_in_menu'  =>   true,
+        'menu_icon'     =>   'dashicons-calendar',
+        'has_archive'   =>   true,
+        'rewrite'       =>   true,
+        'supports'      =>   $supports
+    );
+ 
+    register_post_type( 'event', $args );
+}
+add_action( 'init', 'uep_custom_post_type' );
+
+function my_pre_get_posts( $query ) {
+	
+	// do not modify queries in the admin
+	if( is_admin() ) {
+		
+		return $query;
+		
+	}
+	
+
+	// only modify queries for 'event' post type
+	if( isset($query->query_vars['post_type']) && $query->query_vars['post_type'] == 'event' ) {
+		
+		$query->set('orderby', 'meta_value');	
+		$query->set('meta_key', 'date');	 
+		$query->set('order', 'ASC'); 
+		
+	}
+	
+
+	// return
+	return $query;
+
+}
+
+add_action('pre_get_posts', 'my_pre_get_posts');
+
+
 
 
 ?>

@@ -12,7 +12,8 @@ the_post();
 $team_posts = get_posts( array(
 	'post_type' => 'team',
 	'posts_per_page' => -1, // Unlimited posts
-	'orderby' => 'title', // Order alphabetically by name
+	'orderby' => 'name', // Order alphabetically by name
+    'order' => 'ASC'
 ) );
 
 if ( $team_posts ):
@@ -69,7 +70,7 @@ if ( $team_posts ):
                                             <img src="<?php echo $thumb_src; ?>" alt="<?php the_title(); ?>, <?php the_field('team_position'); ?>" width="150px">
                                             <?php endif; ?>
                                             <div class="details">
-                                                <h3><?php the_title(); ?></h3>
+                                                <h3><?php the_field('name'); ?></h3>
                                                 <p><span class="role"><?php the_field('position'); ?></span><br>
                                                     <?php the_field('department'); ?></p>
                                             </div>

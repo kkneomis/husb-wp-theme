@@ -9,19 +9,30 @@
 the_post();
 
 // Get 'team' posts
+$paged = ( get_query_var( 'paged' ) ) ? get_query_var( 'paged' ) : 1;
+
 $team_posts = get_posts( array(
 	'post_type' => 'post',
-	'posts_per_page' => -1, // Unlimited posts
+	'posts_per_page' => 6, // Unlimited posts
 	'orderby' => 'date', // Order alphabetically by name
+    'paged'          => $paged
 ) );
+
+$the_query = new WP_Query( $team_posts ); 
 
 if ( $team_posts ):
 ?>
 <?php get_header(); ?>
-<?php get_template_part( 'template-parts/headers/header', 'regular' ); ?>
+
+<div class="header-container news">
+    <a href="<?php echo home_url(); ?>"><img src="<?php echo get_bloginfo('template_directory'); ?>/assets/images/howard_logo.png" class="main-logo news"></a>
+    <span class="thin-header-title">
+        <h2>News</h2>
+    </span>
+</div>
 
 
-    <div class="page-section white">
+    <div class="page-section news white">
         <div class="container">
             <div class="row is-table-row"> 
 
@@ -41,37 +52,37 @@ if ( $team_posts ):
                     ?>
                         <a href="<?php the_permalink(); ?>" >
                             <div class="col-md-4 ">
-                                <div class="news-clip">
+                                <div class="card card-background">
                                     <div class="image">
                                         <?php if ( $thumb_src ): ?>
-                                            <img src="<?php echo $thumb_src; ?>" alt="<?php the_title(); ?>" width="100%">
+                                            <img src="<?php echo $thumb_src; ?>" alt="<?php the_title(); ?>, <?php the_field('team_position'); ?>" >
                                         <?php else: ?>
-                                            <img src="https://imagesvc.timeincapp.com/v3/mm/image?url=https%3A%2F%2Fimages.hellogiggles.com%2Fuploads%2F2017%2F04%2F26103325%2FGettyImages-521981437.jpg&w=700&q=85" alt="<?php the_title(); ?>" width="100%">
+                                            <img src="http://atlantablackstar.com/wp-content/uploads/2018/03/Howard.jpg" alt="<?php the_title(); ?>" >
                                         <?php endif; ?>
-                                    </div>    
-                                    <div class="caption">
-                                        <div class="date">
-                                            <span class="day"><?php echo get_the_date( 'd' ); ?></span>
-                                            <span class="month"><?php echo get_the_date( 'M' ); ?></span>
-                                        </div>
-                                        <h3><?php the_title(); ?></h3>
-                                        <p><?php the_excerpt(); ?></p>
-                                        
+                                        <div class="filter"></div>
                                     </div>
-                                </div>
+                                     <div class="content">
+                                        <p class="category">Latest news</p>
+                                        <h4 class="title"><?php the_title(); ?></h4>
+                                    </div>
+                                    <div class="footer">
+                                       <div class="stats pull-right">
+                                            <i class="fa fa-clock-o"></i> <?php echo get_the_date( 'M d, Y' ); ?>
+                                       </div>
+                                    </div>
+                                </div> <!-- end card -->
                            </div>
                         </a>
-
                      <?php endforeach; ?>
+                        <div class="nav-previous alignleft"><?php next_posts_link( 'Older posts' ); ?></div>
+                        <div class="nav-next alignright"><?php previous_posts_link( 'Newer posts' ); ?></div>
                     </div>  
                  </div>
             </div>
         </div>
         
-        
     </div><!---page section---->
 <?php get_footer(); ?>
-
 
 
 <?php endif; ?>

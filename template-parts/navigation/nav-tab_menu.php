@@ -17,8 +17,8 @@
     </div>
     <div class="panel panel-default">
         <div class="panel-heading" id="headingTwo" role="tab">
-            <h4 class="panel-title"><a aria-controls="collapseTwo" aria-expanded="false" class="collapsed" data-parent="#accordion" data-toggle="collapse" href="#collapseTwo" role=
-            "button">Undergraduate</a></h4>
+            <h4 class="panel-title"><a aria-controls="collapseTwo" aria-expanded="false" class="collapsed " data-parent="#accordion" data-toggle="collapse" href="#collapseTwo" role=
+            "button" >Undergraduate</a></h4>
         </div>
         <div aria-labelledby="headingTwo" class="panel-collapse collapse" id="collapseTwo" role="tabpanel">
             <div class="panel-body">
