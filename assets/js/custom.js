@@ -18,11 +18,20 @@ $(document).ready(function() {
         $(e.target).prev('.panel-heading').find("i.indicator").toggleClass('fa-angle-down fa-angle-right')
     }
     
-  $( "#collapsedOne").mouseover(function(){
-         console.log("got here")
-       $( "#collapsedOne" ).trigger( "click" );
-    });
     
+    //Toggle tabs on hover
+    //Needs improvement, but I can't get it to work in jquery
+    /*
+    window.onmouseover=function(e) {
+        if (e.target.className == "collapsed") {
+            e.target.click()
+        }
+    };
+    */
+    
+    
+    
+
     $('.accordion_arrow').on('hidden.bs.collapse', toggleChevron1);
     $('.accordion_arrow').on('shown.bs.collapse', toggleChevron1);
     $('.accordion_plusminus').on('hidden.bs.collapse', toggleChevron);

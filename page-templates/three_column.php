@@ -7,6 +7,14 @@ Template Post Type: page
 
 <?php get_header(); ?>
 
+<style>
+.spotlight img{
+    margin-bottom: 0;
+    width: 100%;
+    height: auto;
+    margin-bottom: 2%;
+}
+</style>
 <?php get_template_part( 'template-parts/headers/header', 'regular' ); ?>
     <div class="page-section white">
         <div class="container">
@@ -16,7 +24,7 @@ Template Post Type: page
 					    <ul class="nav nav-stacked fixed barred" >
 					        <li>
 					            <ul class="nav nav-stacked">
-					            	<?wp_nav_menu( array( 'theme_location' => 'new-menu', 'container_class' => 'new_menu_class' ) ); ?>
+					            	<?wp_nav_menu( array( 'theme_location' => 'general', 'container_class' => 'new_menu_class' ) ); ?>
 					            </ul>
 					        </li>
 					    </ul>          
@@ -47,6 +55,9 @@ Template Post Type: page
                             <div class="note light-blue">
                                 <?php echo get_post_meta($post->ID, 'note-light-blue', true); ?>
                             </div>
+                        <? } ?> 
+                        <? if ( get_post_meta( $post->ID, 'note-blank', true ) ) { ?>
+                            <?php echo get_post_meta($post->ID, 'note-blank', true); ?>
                         <? } ?> 
 				    </div>                    
 				</div>  

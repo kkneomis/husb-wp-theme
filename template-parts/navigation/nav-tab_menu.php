@@ -7,7 +7,9 @@
 <div aria-multiselectable="true" class="panel-group" id="accordion" role="tablist">
     <div class="panel panel-default">
         <div class="panel-heading" id="headingOne" role="tab">
-            <h4 class="panel-title"><a aria-controls="collapseOne" aria-expanded="true" data-parent="#accordion" data-toggle="collapse" href="#collapseOne" role="button">About Us</a></h4>
+            <h4 class="panel-title">
+                <a aria-controls="collapseOne" aria-expanded="true" data-parent="#accordion" data-toggle="collapse" href="#collapseOne" role="button">About Us</a>
+            </h4>
         </div>
         <div aria-labelledby="headingOne" class="panel-collapse collapse" id="collapseOne" role="tabpanel">
             <div class="panel-body">
@@ -17,8 +19,10 @@
     </div>
     <div class="panel panel-default">
         <div class="panel-heading" id="headingTwo" role="tab">
-            <h4 class="panel-title"><a aria-controls="collapseTwo" aria-expanded="false" class="collapsed " data-parent="#accordion" data-toggle="collapse" href="#collapseTwo" role=
-            "button" >Undergraduate</a></h4>
+            <h4 class="panel-title">
+                <a aria-controls="collapseTwo" aria-expanded="false" class="collapsed " data-parent="#accordion" data-toggle="collapse" href="#collapseTwo" role=
+            "button" >Undergraduate</a>
+            </h4>
         </div>
         <div aria-labelledby="headingTwo" class="panel-collapse collapse" id="collapseTwo" role="tabpanel">
             <div class="panel-body">

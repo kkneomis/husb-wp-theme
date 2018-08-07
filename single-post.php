@@ -47,7 +47,9 @@
             <?php wp_reset_postdata(); ?>
             <div class="col-md-7">
               <span class="label"><?php the_date(); ?></span>
-               <span class="label">Written by <?php the_author(); ?></span>
+               <?php  if ( get_field( 'author' ) ) :?>
+                    <span class="label">Written by <?php the_field( 'author' ) ?></span>
+               <?php endif; ?>
                <h1><?php the_title(); ?></h1>
                 <span><?php the_date(); ?></span>
 

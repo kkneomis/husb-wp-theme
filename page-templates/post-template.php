@@ -8,19 +8,13 @@
 
 the_post();
 
-// Get 'team' posts
-$paged = ( get_query_var( 'paged' ) ) ? get_query_var( 'paged' ) : 1;
+// the query to set the posts per page to 3
+$paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
+$args = array('posts_per_page' => 6, 'paged' => $paged );
 
-$team_posts = get_posts( array(
-	'post_type' => 'post',
-	'posts_per_page' => 6, // Unlimited posts
-	'orderby' => 'date', // Order alphabetically by name
-    'paged'          => $paged
-) );
+query_posts($args);
 
-$the_query = new WP_Query( $team_posts ); 
 
-if ( $team_posts ):
 ?>
 <?php get_header(); ?>
 
@@ -35,13 +29,10 @@ if ( $team_posts ):
     <div class="page-section news white">
         <div class="container">
             <div class="row is-table-row"> 
-
-
                   <div class="col-md-10 col-md-offset-1" >
                     <div id="news-grid">
                     <?php
-                    foreach ( $team_posts as $post ): 
-                    setup_postdata($post);
+                    if ( have_posts() ) : while (have_posts()) : the_post();
 
                     // Resize and CDNize thumbnails using Automattic Photon service
                     $thumb_src = null;
@@ -73,11 +64,13 @@ if ( $team_posts ):
                                 </div> <!-- end card -->
                            </div>
                         </a>
-                     <?php endforeach; ?>
-                        <div class="nav-previous alignleft"><?php next_posts_link( 'Older posts' ); ?></div>
-                        <div class="nav-next alignright"><?php previous_posts_link( 'Newer posts' ); ?></div>
+                     <?php endwhile; ?>
+                        
                     </div>  
                  </div>
+            </div>
+            <div class="center">
+                <?php pagination_nav(); ?>
             </div>
         </div>
         

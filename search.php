@@ -16,7 +16,7 @@
 					    <ul class="nav nav-stacked fixed barred" >
 					        <li>
 					            <ul class="nav nav-stacked">
-					            	<?wp_nav_menu( array( 'theme_location' => 'new-menu', 'container_class' => 'new_menu_class' ) ); ?>
+					            	<?wp_nav_menu( array( 'theme_location' => 'about_us_sub', 'container_class' => 'new_menu_class' ) ); ?>
 					            </ul>
 					        </li>
 					    </ul>          

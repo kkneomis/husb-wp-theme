@@ -24,7 +24,7 @@
 
 .mba-ad-image{
     min-height: 450px;
-    background-image: url('<?php echo get_bloginfo('template_directory'); ?>/assets/images/home/MBA_Advertisement.jpg');
+    background-image: url('<?php echo get_bloginfo('template_directory'); ?>/assets/images/mba/mba_ad.jpg');
     background-size: cover;
 }
 
@@ -46,7 +46,8 @@
                 <div class="hero-section">
                     <div class="no-hero-vid"></div>
                     <div class="hero-media">
-                        <video autoplay="autoplay" class="video-background" loop="" preload=""><source src="http://res.cloudinary.com/durryikj6/video/upload/v1484412892/howarddemo_s7ontn.mp4" type="video/mp4"></video>
+                        <video autoplay="autoplay" id="video-background" loop=""  muted>
+                            <source id="main-vid" src="" type="video/mp4"></video>
                     </div>
                     <div class="hero-overlay"></div>
                     <div class="introduction text-center" style="margin-top: -185.5px;">
@@ -63,9 +64,35 @@
                     </div>
                 </div>
             </div><!-- / parallax layer back -->
-            
+
             <div class="parallax__layer parallax__layer--base">
-                <div class="section white main" id="home" >
+                <div section class="section white" id="home" >
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-5">
+                                <h1 class="lead-simple">Developing Business Leaders for the Global Community</h1>
+                                <p>The Howard University School of Business is an AACSB accredited business school with undergraduate, graduate, professional and joint degree programs that span more than 12 areas of study. With dynamic academic departments, esteemed faculty, and award winning programs, it continues to be ranked among the top business programs in the nation.
+                                    <a href="<?php echo home_url(); ?>/about" class="btn btn-edge btn-edge-dark btn-block">Learn more</a>
+                                </p>
+                            </div>
+                            <div class="col-md-7">
+                                <img src="<?php echo get_bloginfo('template_directory'); ?>/assets/images/mba/mba_founders.jpg" class="img-responsive">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div section class="section call-to-action blue center">
+                    <div class="container center">
+                        <h3>Quick Start</h3>
+                        <div class="quick-links">
+                            <a href="<?php echo home_url(); ?>/majors/" class="btn btn-edge btn-edge-blue btn-block">Majors</a>
+                            <a href="<?php echo home_url(); ?>/student-affairs/" class="btn btn-edge btn-edge-blue btn-block">Student Affairs</a>
+                            <a href="<?php echo home_url(); ?>/mba/" class="btn btn-edge btn-edge-blue btn-block">MBA</a>
+                            <a href="<?php echo home_url(); ?>/student-affairs/21cap/" class="btn btn-edge btn-edge-blue btn-block">21 CAP</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="section white main" >
                     
                     <h1 class="center lead">News</h1>
                     <div class="container">
@@ -121,18 +148,22 @@
                         <a href="<?php echo home_url(); ?>/news/" class="btn btn-primary btn-block btn-all-news">View All</a>
                     </div>
                 </div> <!---- end news section -->
-                <div section class="section-no-padding">
+                <div  class="section-no-padding">
                     <div class="row mba-ad">
-                        <div class="col-md-2 "></div>
-                        <div class="col-md-4 mba-ad-content">
-                            <h2>We assist our partners during each stage of the process.</h2>
-                            <a class="btn btn-edge" href="<?php echo home_url(); ?>/mba">See how we do it</a>
-                        </div>
                         <div class="col-md-6 no-mg">
                             <div class="mba-ad-image">
                               
                             </div>
                         </div>
+                        
+                        <div class="col-md-4 mba-ad-content">
+                            <h2>A Graduate Degree at The Howard Business School Opens Doors</h2>
+                            <p>
+                            For the <strong>15th consecutive year</strong>, The Princeton Review has ranked the Howard University School of Business <strong>#1 in opportunities for minority students</strong>
+                            </p>
+                            <a class="btn btn-edge" href="<?php echo home_url(); ?>/mba">Find out why</a>
+                        </div>
+                        
                     </div>
                 </div>
                 <div section class="section call-to-action blue">
@@ -142,18 +173,19 @@
                                 <h3>Just released: our 2018 BottomLine magazine </h3>
                             </div>
                             <div class="col-md-4">
-                                <a class="btn btn-edge btn-edge-blue" href="<?php echo home_url(); ?>/bottom-line">Have a look</a>
+                                <a class="btn btn-edge btn-edge-blue btn-block" href="<?php echo home_url(); ?>/bottom-line">Have a look</a>
                             </div>
                         </div>
                     </div>
                 </div>
                 
-                
-                
-                
                 <div section class="section-no-padding">
                     <h1 class="center lead">Upcoming Events</h1>
                     <div class="row events">
+                        <div class="col-md-2 "></div>
+                        <div class="col-md-4 ">
+                            <div class="img-feature-boseman"></div>
+                        </div>
                         <div class="col-md-6">
                             <div class="upcoming-events">
                                 <div class="table-responsive">
@@ -209,14 +241,12 @@
                                             <br><br>
                                         </tbody>
                                     </table>
-                                                <a href="<?php echo home_url(); ?>/events" class="btn btn-edge btn-edge-dark btn-block">View all events</a>
+                                                <a href="<?php echo home_url(); ?>/events/" class="btn btn-edge btn-edge-dark btn-block">View all events</a>
                                     </div>
                             </div>
                         </div>
-                        <div class="col-md-4 ">
-                            <div class="img-feature-boseman"></div>
-                        </div>
-                        <div class="col-md-2 "></div>
+                        
+                        
                     </div>
                 </div>
                 <a href="#" id="back-to-top"><i class="icon-to-top"></i></a>
@@ -230,6 +260,41 @@
 <script src="<?php echo get_bloginfo('template_directory'); ?>/assets/js/jquery.min.js">
 	</script> 
 <script>
+
+document.getElementById("main-vid").src = "http://www.kakpovi.com/wp-content/uploads/2018/07/howarddemo_s7ontn-2.mp4";
+document.getElementById("video-background").load(); 
+document.getElementById("video-background").play();
+    
+/**
+videos = ["http://www.kakpovi.com/wp-content/uploads/2018/07/howarddemo_s7ontn-2.mp4",
+             "http://localhost:8888/test_templating/wp-content/uploads/2018/07/Film-set.mp4"]
+
+
+link = videos[Math.floor(Math.random()*videos.length)];
+document.getElementById("main-vid").src = link;
+document.getElementById("video-background").load(); 
+document.getElementById("video-background").play();
+// Usage!
+**/
+/**
+function sleep (time) {
+  return new Promise((resolve) => setTimeout(resolve, time));
+}
+    
+// Will execute myCallback every 0.5 seconds 
+//var intervalID = window.setInterval(myCallback, 5000);
+
+function myCallback() {
+ // Your code here
+    console.log("hit the callback")
+    link = videos[Math.floor(Math.random()*videos.length)];
+    console.log(link);
+    document.getElementById("main-vid").src = link;
+    document.getElementById("video-background").load(); 
+    document.getElementById("video-background").play(); 
+}
+
+***/
 
 //Need this here because main parallax
 function getMenu() {
@@ -250,6 +315,7 @@ function getMenu() {
         })
     }
 }    
+    
 
 </script>
 

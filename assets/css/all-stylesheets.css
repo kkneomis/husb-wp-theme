@@ -2,7 +2,7 @@
 [Master Stylesheet]
 
 Project:    Howard University School of Business 
-Version:    1.2
+Version:    2.0
 Authors:    Simeon Kakpovi, Daylin Henry, Taylor Roper
 
 ---------------------
@@ -235,17 +235,7 @@ body {
 
 
 
-.parallax {
-    background-attachment: fixed;
-    background-repeat: repeat-y;
-    background-position: 50% 0;
-    background-size: cover;
-    color: white;
-}
 
-.parallax .fluff{
-    height: 1000px;
-}
 
 .scrollup {
     width: 40px;
@@ -363,7 +353,7 @@ body {
 
 #accordion .panel-title > a:hover{
     background:#003d66; 
-    padding-left: 20px;
+    padding-left: 10px;
 }
 
 #accordion .panel-title > a.accordion-toggle::before, #accordion a[data-toggle="collapse"]::after  {
@@ -400,7 +390,7 @@ body {
 }
 
 #accordion .panel-body li:hover{
-    padding-left: 20px;
+    padding-left: 10px;
     color: #fff;
     background:#003d66;
 }
@@ -1053,6 +1043,12 @@ body {
     font-family: 'Playfair Display', serif;
 }
 
+.lead-simple{
+    font-size: 45px;
+    font-weight: 400;
+    font-family: 'Playfair Display', serif;
+}
+
 .lead::before,
 .lead::after {
     display: inline-block;
@@ -1063,6 +1059,19 @@ body {
     transform: translateY(-1rem);
 }
 
+
+.features{
+    color: #003a63;
+}
+
+.features h3{
+    color: #e51937;
+    padding-top: 50px;
+}
+
+.home-feature{
+    padding: 30;
+}
 
 .section  h1{
     margin-bottom: 40px;
@@ -1100,6 +1109,11 @@ body {
     text-align: right;
 }
 
+  .quick-links{
+        display: inline-block;
+        text-align: center;
+    }
+            
 
 .overlay {
     position: absolute;
@@ -1269,7 +1283,6 @@ body {
 }
 
 
-
 .bs-header h1{
     margin-top: 100px;
     font-size: 50px;
@@ -1278,13 +1291,6 @@ body {
     font-family: 'Open Sans', sans-serif;
 }
 
-.bs-header p{
-    padding: 10px;
-    font-style: italic;
-    font-size: 22px;
-    font-family: 'Playfair Display', serif !important;
-    font-weight: 200;
-}
 
 .bs-header-img{
     position: fixed;
@@ -1308,10 +1314,23 @@ body {
       height: 450px;
       overflow: hidden;
     }
-    
-    .bs-header .image img {
-        width: 100%;
-    }
+
+.bs-header .image img {
+    width: 100%;
+}
+
+.bs-header.large{
+    height: 700px;
+    background: /* top, transparent red, faked with gradient */ 
+    linear-gradient(
+      rgba(0, 58, 99, 0.5), 
+      rgba(0, 58, 99, 0.5)
+    ), url('../images/grid.png');
+}
+.bs-header.large .image{
+    height: 700px;
+    position: absolute;
+}
 
 
 @media (max-width: 1100px){
@@ -2285,6 +2304,7 @@ fieldset[disabled] .btn-link:focus {
 	max-width: 250px;
 	display: block;
 	margin: 1em;
+    margin-left: 0px;
     font-size: 18px;
 	padding: 8px 5px 8px 15px;
 	border: none;
@@ -2331,7 +2351,7 @@ fieldset[disabled] .btn-link:focus {
 }
 
 .btn.btn-edge-dark{
-    color: #000;
+    color: #003a63;
 }
 
 
@@ -2438,6 +2458,7 @@ fieldset[disabled] .btn-link:focus {
 .spotlight img{
     margin-bottom: 0;
     width: 100%;
+    height: auto;
     margin-bottom: -20%;
 }
 
@@ -2719,6 +2740,11 @@ a.morelink:hover {
     }
 }
 
+.identity-stripe{
+    padding: 5px;
+    background: #001E32;
+    z-index: 999;
+}
 
 .column-title{
     font-weight: 800;
@@ -2793,7 +2819,6 @@ a.morelink:hover {
 }
 
 .news p{
-    font-weight: 300;
     line-height: 1.7;
     padding-top: 10px;
     font-size: 18px;
@@ -3209,7 +3234,15 @@ a.morelink:hover {
 
 .mba-ad-content h2{
     color: #fff;
-    padding-bottom: 150px;
+    padding-bottom: 15px;
+}
+
+.mba-ad-content h2:after {
+ padding: 10px;
+  border-bottom: 4px solid #fff;
+  content: '';
+  display: block;
+  width: 15%;
 }
 
 .section-no-padding{

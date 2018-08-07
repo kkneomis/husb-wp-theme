@@ -111,6 +111,7 @@ add_action( 'init', 'team_taxonomy', 0 );
 		'undergrad_main'  => __( 'Undergraduate Main Menu', 'husb' ),
 		'graduate_main'  => __( 'Graduate Main Menu', 'husb' ),
         'graduate_menu'  => __( 'Graduate Menu', 'husb' ),
+        'mba_menu'  => __( 'MBA Menu', 'mba_menu' ),
 		'student_affairs_main'  => __( 'Student Affair Main Menu', 'husb' ),
         'student_affairs_side'  => __( 'Student Affair Side Menu', 'husb' ),
 		'inside_main'  => __( 'Inside HUSB Main Menu', 'husb' ),
@@ -190,6 +191,16 @@ function my_pre_get_posts( $query ) {
 
 add_action('pre_get_posts', 'my_pre_get_posts');
 
+function pagination_nav() {
+    global $wp_query;
+ 
+    if ( $wp_query->max_num_pages > 1 ) { ?>
+        <nav class="pagination" role="navigation">
+            <div class="nav-previous"><?php next_posts_link( '&larr; Older posts' ); ?></div>
+            <div class="nav-next"><?php previous_posts_link( 'Newer posts &rarr;' ); ?></div>
+        </nav>
+<?php }
+}
 
 
 
