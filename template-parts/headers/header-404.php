@@ -3,11 +3,7 @@
 
     <div class="bs-header" >
         <div class="image">
-            <?php  if ( has_post_thumbnail() ) :?>
-                <img src="<?php the_post_thumbnail_url() ?>" alt="<?php the_title_attribute(); ?>" >
-            <?php else : ?>
-                <img src="<?php echo get_bloginfo('template_directory'); ?>/assets/images/headers/404.jpg" alt="Howard University Wakanda" >
-            <?php endif; ?>
+                <img src="<?php echo get_bloginfo('template_directory'); ?>/assets/images/headers/default.jpg" alt="Howard University Wakanda" >
         </div>
       <div class="header-container">
         <a href="<?php echo home_url(); ?>"><img src="<?php echo get_bloginfo('template_directory'); ?>/assets/images/howard_logo.png" class="main-logo"></a>

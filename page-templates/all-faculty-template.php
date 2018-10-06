@@ -53,7 +53,7 @@ if ( $team_posts ):
                     }
                     ?>
                                 <a href="<?php the_permalink(); ?>" >
-                                    <div class="col-md-4 faculty-profile accounting
+                                    <div class="col-md-4 faculty-profile 
                                                 <?php
                                                 $posttags = wp_get_object_terms($post->ID, 'department');;  
                                                 // echo $posttags;

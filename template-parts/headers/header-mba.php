@@ -4,7 +4,7 @@
         <?php  if ( has_post_thumbnail() ) :?>
             <img src="<?php the_post_thumbnail_url() ?>" alt="<?php the_title_attribute(); ?>" >
         <?php else : ?>
-            <img src="http://www.kakpovi.com/wp-content/uploads/2018/07/HU-MBA1.jpg" alt="Howard University students" >
+            <img src="http://www.bschool.howard.edu/wp-content/uploads/2018/07/HU-MBA1.jpg" alt="Howard University students" >
         <?php endif; ?>
     </div>
   <div class="header-container">
@@ -35,6 +35,20 @@
         font-family: 'Open Sans', sans-serif;
         padding-left: 100px;
         font-size: 20px;
+    }
+    
+    
+    @media (max-width: 700px) {
+        .header-container{
+            padding-top: 50px;
+        }
+
+        .bs-header.large h1{
+            font-size: 50px;
+        }
+        .mba-header-caption p{
+            padding-left: 30px;
+        }
     }
     
 </style>

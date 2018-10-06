@@ -12,12 +12,12 @@
 
             <h4>Common Searches</h4>
             <ul>
-                <li><a href="/departments">What majors and concentrations are offered?</a></li>
-                <li><a href="/mba">What MBA programs are offered?</a></li>
+                <li><a href="/departments/">What majors and concentrations are offered?</a></li>
+                <li><a href="/mba/">What MBA programs are offered?</a></li>
                 <!---<li><a href="#">What financial aid packages are available?</a></li> -->
-                <li><a href="/student-affairs">Where can I find my course scheme?</a></li>
-                <li><a href="/student-affairs/21cap">What is the 21 CAP Program?</a></li> 
-                <li><a href="/student-affairs/sbel">What is the SBEL program?</a></li>            
+                <li><a href="/student-affairs/">Where can I find my course scheme?</a></li>
+                <li><a href="/student-affairs/21cap/">What is the 21 CAP Program?</a></li> 
+                <li><a href="/student-affairs/sbel/">What is the SBEL program?</a></li>            
             </ul>
         </div>
     </div>
@@ -65,8 +65,8 @@
 				</div>
 			</div>
 			<div class="bottom">
-				<a class="active" href="#" title="Copyright 2017 Howard University School of Business">Copyright 2017</a> <a href="/search" title="search">Search</a> <!--a href="#" title="">Disclaimer</a=-->
-				 <a href="/donors" title="">Give</a> <a href="/webteam" title="">Web Team @ Howard School of Business</a>
+				<a class="active" href="#" title="Copyright 2017 Howard University School of Business">Copyright 2017</a> <a href="/search/" title="search">Search</a> <!--a href="#" title="">Disclaimer</a=-->
+				 <a href="/donors/" title="">Give</a> <a href="mailto:husbwebmaster@gmail.com" title="">Web Team @ Howard School of Business</a>
 			</div>
 			<div class="row">
 				<div class="col-md-4 col-md-offset-4">

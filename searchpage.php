@@ -23,7 +23,7 @@ Template Name: Search Page
 
                 </div> <!--- end colmd3 ---->
                 
-                <div class="col-md-6">
+                <div class="col-md-8">
                    <?php get_search_form(); ?>
 
                    <?php

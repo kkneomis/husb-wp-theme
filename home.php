@@ -22,10 +22,54 @@
     z-index: 2;
 }
 
+.mobile-intro{
+    display: none;
+}
+    
+    
+@media (max-width: 1000px) {
+	/* Styles */
+	.parallax__layer--back  {
+      display: none;
+    }
+    
+    .mobile-intro{
+        padding: 150px 200px 150px 200px;
+        display: block;
+        background-image: linear-gradient(
+          rgba(0, 58, 99, 0.8), 
+          rgba(0, 58, 99, 0.8)
+        ), url('http://www.bschool.howard.edu/wp-content/uploads/2018/08/GoldSachs.10.2017.2jpg-1.jpg');
+        background-repeat: no-repeat;
+        background-size: 100% auto;
+        margin-bottom: 75px;
+    }
+}
+
+@media (max-width: 700px) {
+    .mobile-intro{
+        padding: 100px 50px 100px 50px;
+    }
+}
+    
+@media (max-width: 500px) {
+    .mobile-intro{
+        padding: 100px 20px 100px 20px;
+    }
+}
+    
 .mba-ad-image{
     min-height: 450px;
     background-image: url('<?php echo get_bloginfo('template_directory'); ?>/assets/images/mba/mba_ad.jpg');
     background-size: cover;
+}
+    
+@media (max-width: 700px) {
+    .mba-ad-image{
+        background-size: 100% auto;
+        background-repeat: no-repeat;
+        min-height: 300px;
+    }
 }
 
 .img-feature-boseman{
@@ -47,7 +91,8 @@
                     <div class="no-hero-vid"></div>
                     <div class="hero-media">
                         <video autoplay="autoplay" id="video-background" loop=""  muted>
-                            <source id="main-vid" src="" type="video/mp4"></video>
+                            <source id="main-vid" src="" type="video/mp4">
+                        </video>
                     </div>
                     <div class="hero-overlay"></div>
                     <div class="introduction text-center" style="margin-top: -185.5px;">
@@ -66,7 +111,10 @@
             </div><!-- / parallax layer back -->
 
             <div class="parallax__layer parallax__layer--base">
-                <div section class="section white" id="home" >
+                <div class="mobile-intro">
+                    <img src="<?php echo get_bloginfo('template_directory'); ?>/assets/images/howard_logo.png" style="margin:auto;" width="100%">
+                </div>
+                <div class="section white" id="home" >
                     <div class="container">
                         <div class="row">
                             <div class="col-md-5">
@@ -126,7 +174,7 @@
                                         <?php if ( $thumb_src ): ?>
                                             <img src="<?php echo $thumb_src; ?>" alt="<?php the_title(); ?>, <?php the_field('team_position'); ?>" >
                                         <?php else: ?>
-                                            <img src="http://atlantablackstar.com/wp-content/uploads/2018/03/Howard.jpg" alt="<?php the_title(); ?>" >
+                                            <img src="<?php echo get_bloginfo('template_directory'); ?>/assets/images/headers/default.jpg" alt="<?php the_title(); ?>" >
                                         <?php endif; ?>
                                         <div class="filter"></div>
                                     </div>
@@ -261,12 +309,12 @@
 	</script> 
 <script>
 
-document.getElementById("main-vid").src = "http://www.kakpovi.com/wp-content/uploads/2018/07/howarddemo_s7ontn-2.mp4";
+document.getElementById("main-vid").src = "https://www.bschool.howard.edu/wp-content/uploads/2018/07/howarddemo_s7ontn-2.mp4";
 document.getElementById("video-background").load(); 
 document.getElementById("video-background").play();
     
 /**
-videos = ["http://www.kakpovi.com/wp-content/uploads/2018/07/howarddemo_s7ontn-2.mp4",
+videos = ["http://www.bschool.howard.edu/wp-content/uploads/2018/07/howarddemo_s7ontn-2.mp4",
              "http://localhost:8888/test_templating/wp-content/uploads/2018/07/Film-set.mp4"]
 
 

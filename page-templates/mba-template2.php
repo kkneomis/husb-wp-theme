@@ -28,7 +28,7 @@ Template Post Type: page
         <link rel="stylesheet" href="<?php echo get_bloginfo('template_directory'); ?>/assets/mba/responsive.css" />
         <!-- end header -->
         <!-- start parallax hero section -->
-        <section class="wow fadeIn no-padding parallax xs-background-image-center" data-stellar-background-ratio="0.5" style="background-image:url('http://www.kakpovi.com/wp-content/uploads/2018/07/HU-MBA1.jpg');">
+        <section class="wow fadeIn no-padding parallax xs-background-image-center" data-stellar-background-ratio="0.5" style="background-image:url('http://www.bschool.howard.edu/wp-content/uploads/2018/07/HU-MBA1.jpg');">
             <div class="opacity-extra-medium bg-black"></div>
             <div class="container-fluid padding-thirteen-lr one-fourth-screen xs-padding-15px-lr">
                 <div class="row height-100">
@@ -184,7 +184,7 @@ Template Post Type: page
         </section>
         <!-- end services section -->
         <!-- start services section -->
-        <section class=" wow fadeIn parallax xs-background-image-center padding-nineteen-bottom xs-padding-50px-bottom" data-stellar-background-ratio="0.5" style="background-image:url('http://www.kakpovi.com/wp-content/uploads/2018/07/IMG_0600.jpg');">
+        <section class=" wow fadeIn parallax xs-background-image-center padding-nineteen-bottom xs-padding-50px-bottom" data-stellar-background-ratio="0.5" style="background-image:url('http://www.bschool.howard.edu/wp-content/uploads/2018/07/IMG_0600.jpg');">
             <div class="opacity-extra-medium bg-black"></div>
             <div class="container-fluid padding-thirteen-lr md-padding-six-lr position-relative xs-padding-15px-lr">
                 <div class="row">
@@ -348,7 +348,7 @@ Template Post Type: page
         </section>
         <!-- end portfolio section -->
         <!-- start parallax with video section -->
-        <section class="parallax" data-stellar-background-ratio="0.1" style="background-image:url('http://www.kakpovi.com/wp-content/uploads/2018/07/HU-MBA3.jpg');">
+        <section class="parallax" data-stellar-background-ratio="0.1" style="background-image:url('http://www.bschool.howard.edu/wp-content/uploads/2018/07/HU-MBA3.jpg');">
             <div class="opacity-extra-medium bg-black"></div>
             <div class="container position-relative">
                 <div class="row">

@@ -30,7 +30,7 @@ query_posts($args);
         <div class="container">
             <div class="row is-table-row"> 
                   <div class="col-md-10 col-md-offset-1" >
-                    <div id="news-grid">
+                    <div id="">
                     <?php
                     if ( have_posts() ) : while (have_posts()) : the_post();
 
@@ -42,13 +42,13 @@ query_posts($args);
                     }
                     ?>
                         <a href="<?php the_permalink(); ?>" >
-                            <div class="col-md-4 ">
+                            <div class="col-md-4">
                                 <div class="card card-background">
                                     <div class="image">
                                         <?php if ( $thumb_src ): ?>
                                             <img src="<?php echo $thumb_src; ?>" alt="<?php the_title(); ?>, <?php the_field('team_position'); ?>" >
                                         <?php else: ?>
-                                            <img src="http://atlantablackstar.com/wp-content/uploads/2018/03/Howard.jpg" alt="<?php the_title(); ?>" >
+                                            <img src="<?php echo get_bloginfo('template_directory'); ?>/assets/images/headers/default.jpg" alt="<?php the_title(); ?>" >
                                         <?php endif; ?>
                                         <div class="filter"></div>
                                     </div>
